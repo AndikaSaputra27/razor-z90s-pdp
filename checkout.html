@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="default">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout &mdash; Razor Audio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="checkout.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <button class="btn-icon btn-hamburger" id="btnHamburger" aria-label="Buka menu" aria-expanded="false" aria-controls="navDrawer">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <a href="index.html" class="site-logo" aria-label="Razor Audio">
+        <span class="logo-razor">RAZOR</span>
+        <span class="logo-audio">AUDIO</span>
+      </a>
+      <div class="header-actions">
+        <button class="btn-icon btn-darkmode" id="btnDarkMode" aria-label="Toggle dark mode">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="products.html" class="btn-icon" aria-label="Kembali belanja">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAV DRAWER -->
+  <nav class="nav-drawer" id="navDrawer" role="navigation" aria-hidden="true">
+    <div class="nav-drawer-header">
+      <span class="nav-drawer-title">Menu</span>
+      <button class="btn-icon btn-close-nav" id="btnCloseNav" aria-label="Tutup menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <ul class="nav-drawer-list">
+      <li><a href="index.html" class="nav-drawer-link">Beranda</a></li>
+      <li><a href="products.html" class="nav-drawer-link">Semua Produk</a></li>
+      <li><a href="checkout.html" class="nav-drawer-link active-link">Checkout</a></li>
+    </ul>
+  </nav>
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+  <!-- CHECKOUT PROGRESS STEPS -->
+  <div class="checkout-steps reveal">
+    <div class="checkout-steps-inner">
+      <div class="step active" data-step="1">
+        <span class="step-num">1</span>
+        <span class="step-label">Informasi</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" data-step="2">
+        <span class="step-num">2</span>
+        <span class="step-label">Pengiriman</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" data-step="3">
+        <span class="step-num">3</span>
+        <span class="step-label">Pembayaran</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" data-step="4">
+        <span class="step-num">4</span>
+        <span class="step-label">Konfirmasi</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CHECKOUT LAYOUT -->
+  <main class="checkout-main">
+    <div class="checkout-container">
+
+      <!-- LEFT: Form -->
+      <div class="checkout-form-col">
+
+        <!-- STEP 1: Contact Info -->
+        <section class="checkout-section reveal" id="stepInfo">
+          <h2 class="checkout-section-title">
+            <span class="section-num">1</span> Informasi Kontak
+          </h2>
+          <form class="checkout-form" id="formInfo" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">Nama Depan <span class="required">*</span></label>
+                <input type="text" id="firstName" name="firstName" placeholder="Andika" autocomplete="given-name" required />
+                <span class="field-error" id="errFirstName"></span>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Nama Belakang <span class="required">*</span></label>
+                <input type="text" id="lastName" name="lastName" placeholder="Saputra" autocomplete="family-name" required />
+                <span class="field-error" id="errLastName"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="andika@email.com" autocomplete="email" required />
+              <span class="field-error" id="errEmail"></span>
+            </div>
+            <div class="form-group">
+              <label for="phone">Nomor Telepon <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="+62 812 3456 7890" autocomplete="tel" required />
+              <span class="field-error" id="errPhone"></span>
+            </div>
+          </form>
+        </section>
+
+        <!-- STEP 2: Shipping -->
+        <section class="checkout-section reveal" id="stepShipping">
+          <h2 class="checkout-section-title">
+            <span class="section-num">2</span> Alamat Pengiriman
+          </h2>
+          <form class="checkout-form" id="formShipping" novalidate>
+            <div class="form-group">
+              <label for="address">Alamat Lengkap <span class="required">*</span></label>
+              <input type="text" id="address" name="address" placeholder="Jl. Sudirman No. 1, Apt. 5B" autocomplete="street-address" required />
+              <span class="field-error" id="errAddress"></span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">Kota <span class="required">*</span></label>
+                <input type="text" id="city" name="city" placeholder="Jakarta" autocomplete="address-level2" required />
+                <span class="field-error" id="errCity"></span>
+              </div>
+              <div class="form-group">
+                <label for="province">Provinsi <span class="required">*</span></label>
+                <select id="province" name="province" autocomplete="address-level1" required>
+                  <option value="">Pilih Provinsi</option>
+                  <option>DKI Jakarta</option>
+                  <option>Jawa Barat</option>
+                  <option>Jawa Tengah</option>
+                  <option>Jawa Timur</option>
+                  <option>Banten</option>
+                  <option>Bali</option>
+                  <option>Sumatera Utara</option>
+                  <option>Sumatera Selatan</option>
+                  <option>Kalimantan Timur</option>
+                  <option>Sulawesi Selatan</option>
+                  <option>Lainnya</option>
+                </select>
+                <span class="field-error" id="errProvince"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="postalCode">Kode Pos <span class="required">*</span></label>
+                <input type="text" id="postalCode" name="postalCode" placeholder="12190" autocomplete="postal-code" maxlength="5" required />
+                <span class="field-error" id="errPostalCode"></span>
+              </div>
+              <div class="form-group">
+                <label for="country">Negara</label>
+                <input type="text" id="country" name="country" value="Indonesia" readonly />
+              </div>
+            </div>
+
+            <!-- Shipping Method -->
+            <fieldset class="shipping-methods">
+              <legend class="shipping-methods-title">Metode Pengiriman</legend>
+              <label class="shipping-option">
+                <input type="radio" name="shipping" value="regular" checked />
+                <div class="shipping-option-body">
+                  <div class="shipping-option-info">
+                    <span class="shipping-name">JNE Regular</span>
+                    <span class="shipping-eta">3&ndash;5 hari kerja</span>
+                  </div>
+                  <span class="shipping-price">$5.00</span>
+                </div>
+              </label>
+              <label class="shipping-option">
+                <input type="radio" name="shipping" value="express" />
+                <div class="shipping-option-body">
+                  <div class="shipping-option-info">
+                    <span class="shipping-name">JNE Express</span>
+                    <span class="shipping-eta">1&ndash;2 hari kerja</span>
+                  </div>
+                  <span class="shipping-price">$12.00</span>
+                </div>
+              </label>
+              <label class="shipping-option">
+                <input type="radio" name="shipping" value="same-day" />
+                <div class="shipping-option-body">
+                  <div class="shipping-option-info">
+                    <span class="shipping-name">GoSend Same Day</span>
+                    <span class="shipping-eta">Hari ini (Jakarta only)</span>
+                  </div>
+                  <span class="shipping-price">$18.00</span>
+                </div>
+              </label>
+            </fieldset>
+          </form>
+        </section>
+
+        <!-- STEP 3: Payment -->
+        <section class="checkout-section reveal" id="stepPayment">
+          <h2 class="checkout-section-title">
+            <span class="section-num">3</span> Metode Pembayaran
+          </h2>
+          <div class="payment-methods">
+            <label class="payment-option active" id="payCC">
+              <input type="radio" name="payment" value="cc" checked />
+              <div class="payment-option-body">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                <span>Kartu Kredit / Debit</span>
+              </div>
+            </label>
+            <label class="payment-option" id="payBT">
+              <input type="radio" name="payment" value="bt" />
+              <div class="payment-option-body">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/></svg>
+                <span>Transfer Bank</span>
+              </div>
+            </label>
+            <label class="payment-option" id="payWallet">
+              <input type="radio" name="payment" value="wallet" />
+              <div class="payment-option-body">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><circle cx="16" cy="12" r="1"/></svg>
+                <span>E-Wallet (GoPay / OVO / Dana)</span>
+              </div>
+            </label>
+          </div>
+
+          <!-- Credit Card Form -->
+          <div class="cc-form reveal" id="ccForm">
+            <div class="form-group">
+              <label for="cardNumber">Nomor Kartu <span class="required">*</span></label>
+              <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number" />
+              <span class="field-error" id="errCard"></span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cardExpiry">Masa Berlaku <span class="required">*</span></label>
+                <input type="text" id="cardExpiry" placeholder="MM / YY" maxlength="7" autocomplete="cc-exp" />
+              </div>
+              <div class="form-group">
+                <label for="cardCvc">CVV <span class="required">*</span></label>
+                <input type="text" id="cardCvc" placeholder="123" maxlength="4" autocomplete="cc-csc" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cardName">Nama di Kartu <span class="required">*</span></label>
+              <input type="text" id="cardName" placeholder="ANDIKA SAPUTRA" autocomplete="cc-name" style="text-transform:uppercase;" />
+            </div>
+          </div>
+
+          <!-- Bank Transfer Info -->
+          <div class="bt-form hidden" id="btForm">
+            <div class="bank-info-card">
+              <p class="bank-info-title">Transfer ke salah satu rekening berikut:</p>
+              <div class="bank-row"><span class="bank-name">BCA</span><span class="bank-account">1234567890 a/n Razor Audio Indonesia</span></div>
+              <div class="bank-row"><span class="bank-name">Mandiri</span><span class="bank-account">0987654321 a/n Razor Audio Indonesia</span></div>
+              <p class="bank-note">Pembayaran dikonfirmasi dalam 1&times;24 jam setelah transfer.</p>
+            </div>
+          </div>
+
+          <!-- E-Wallet Info -->
+          <div class="wallet-form hidden" id="walletForm">
+            <div class="bank-info-card">
+              <p class="bank-info-title">Scan QR atau kirim ke nomor berikut:</p>
+              <div class="bank-row"><span class="bank-name">GoPay / OVO / Dana</span><span class="bank-account">+62 812 0000 9999 a/n Razor Audio</span></div>
+              <p class="bank-note">Sertakan nama lengkap sebagai berita transfer.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Place Order Button -->
+        <div class="checkout-submit reveal">
+          <button class="btn-place-order" id="btnPlaceOrder" type="button">
+            <span id="placeOrderText">Buat Pesanan</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <p class="secure-note">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Transaksi dijamin aman dengan enkripsi SSL 256-bit
+          </p>
+        </div>
+
+      </div>
+      <!-- /checkout-form-col -->
+
+      <!-- RIGHT: Order Summary -->
+      <aside class="checkout-summary-col">
+        <div class="order-summary" id="orderSummary">
+          <h2 class="order-summary-title">Ringkasan Pesanan</h2>
+
+          <ul class="order-items" id="orderItems">
+            <!-- Populated by JS from localStorage or default -->
+          </ul>
+
+          <div class="order-coupon">
+            <input type="text" id="couponInput" placeholder="Kode kupon (cth: RAZOR10)" />
+            <button class="btn-apply-coupon" id="btnApplyCoupon">Terapkan</button>
+          </div>
+          <p class="coupon-msg" id="couponMsg"></p>
+
+          <div class="order-totals">
+            <div class="totals-row">
+              <span>Subtotal</span>
+              <span id="summSubtotal">$0.00</span>
+            </div>
+            <div class="totals-row">
+              <span>Pengiriman</span>
+              <span id="summShipping">$5.00</span>
+            </div>
+            <div class="totals-row discount-row hidden" id="discountRow">
+              <span>Diskon Kupon</span>
+              <span id="summDiscount" class="discount-val">-$0.00</span>
+            </div>
+            <div class="totals-row totals-row--total">
+              <span>Total</span>
+              <span id="summTotal">$0.00</span>
+            </div>
+          </div>
+
+          <div class="order-trust">
+            <div class="trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Garansi 2 tahun resmi</span>
+            </div>
+            <div class="trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Pengiriman ke seluruh Indonesia</span>
+            </div>
+            <div class="trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              <span>30 hari pengembalian gratis</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- SUCCESS MODAL -->
+  <div class="success-overlay hidden" id="successOverlay" role="dialog" aria-modal="true" aria-label="Pesanan berhasil">
+    <div class="success-modal">
+      <div class="success-icon">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <h2 class="success-title">Pesanan Berhasil Dibuat!</h2>
+      <p class="success-desc">Terima kasih telah berbelanja di Razor Audio. Konfirmasi pesanan telah dikirim ke email kamu.</p>
+      <p class="success-order-id">Order ID: <strong id="successOrderId">#RZR-000000</strong></p>
+      <div class="success-actions">
+        <a href="products.html" class="btn-success-shop">Lanjut Belanja</a>
+        <a href="index.html" class="btn-success-home">Kembali ke Beranda</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-razor">RAZOR</span><span class="logo-audio">AUDIO</span>
+        <p class="footer-tagline">Premium Sound. Engineered for Life.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h3 class="footer-col-title">Produk</h3>
+          <ul><li><a href="products.html">Semua Produk</a></li><li><a href="index.html">Razor Z90s</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Belanja</h3>
+          <ul><li><a href="checkout.html">Checkout</a></li><li><a href="#">Kebijakan Pengembalian</a></li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Razor Audio. Seluruh hak cipta dilindungi.</p>
+    </div>
+  </footer>
+
+  <script src="shared.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>
