@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 420" width="400" height="420">
+  <defs>
+    <radialGradient id="bg-sl-s" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#dde4ea"/>
+      <stop offset="100%" stop-color="#b8c4cc"/>
+    </radialGradient>
+    <radialGradient id="cup-sl-s" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#eaf0f4"/>
+      <stop offset="50%" stop-color="#c0cdd6"/>
+      <stop offset="100%" stop-color="#8a9eac"/>
+    </radialGradient>
+    <linearGradient id="band-sl-s" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b8c8d4"/>
+      <stop offset="50%" stop-color="#dce8ee"/>
+      <stop offset="100%" stop-color="#b0c0cc"/>
+    </linearGradient>
+    <filter id="shadow-sl-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="4" dy="8" stdDeviation="14" flood-color="#6a8090" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="420" fill="url(#bg-sl-s)" rx="20"/>
+
+  <g filter="url(#shadow-sl-s)">
+    <!-- Headband arc side -->
+    <path d="M 175 310 Q 130 290 125 220 Q 120 130 200 90 Q 270 75 295 150"
+          fill="none" stroke="url(#band-sl-s)" stroke-width="20" stroke-linecap="round"/>
+    <!-- Shine on band -->
+    <path d="M 178 308 Q 134 288 129 218 Q 124 132 202 94"
+          fill="none" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.3"/>
+
+    <!-- Top pad -->
+    <path d="M 192 96 Q 242 80 287 157"
+          fill="none" stroke="#c0ccd8" stroke-width="13" stroke-linecap="round"/>
+
+    <!-- Slider arm -->
+    <rect x="160" y="295" width="18" height="42" rx="5" fill="#c8d4dc" stroke="#a8b8c4" stroke-width="1"/>
+    <rect x="163" y="302" width="12" height="5" rx="2" fill="#d8e4ea"/>
+    <rect x="163" y="311" width="12" height="5" rx="2" fill="#c8d4dc"/>
+    <rect x="163" y="320" width="12" height="5" rx="2" fill="#b8c8d4"/>
+
+    <!-- Earcup side profile -->
+    <ellipse cx="185" cy="340" rx="72" ry="52" fill="url(#cup-sl-s)" transform="rotate(-8,185,340)"/>
+    <ellipse cx="185" cy="340" rx="72" ry="52" fill="none" stroke="#a8b8c4" stroke-width="1.5" transform="rotate(-8,185,340)"/>
+    <ellipse cx="185" cy="340" rx="63" ry="44" fill="#c0ccd8" stroke="#b0bece" stroke-width="1" transform="rotate(-8,185,340)"/>
+
+    <!-- Speaker grille -->
+    <ellipse cx="185" cy="340" rx="46" ry="32" fill="#9aaab8" transform="rotate(-8,185,340)"/>
+    <line x1="166" y1="324" x2="204" y2="356" stroke="#b0c0cc" stroke-width="1" opacity="0.6"/>
+    <line x1="166" y1="332" x2="204" y2="364" stroke="#b0c0cc" stroke-width="1" opacity="0.5"/>
+    <line x1="166" y1="316" x2="204" y2="348" stroke="#b0c0cc" stroke-width="1" opacity="0.4"/>
+    <line x1="174" y1="318" x2="156" y2="348" stroke="#b0c0cc" stroke-width="1" opacity="0.4"/>
+
+    <!-- USB-C -->
+    <rect x="220" y="356" width="14" height="5" rx="2" fill="#8898a8" stroke="#a8b8c4" stroke-width="0.5"/>
+
+    <!-- Accent dot -->
+    <circle cx="215" cy="320" r="5" fill="#5a7a8a" opacity="0.9"/>
+
+    <!-- Metallic shine -->
+    <ellipse cx="158" cy="320" rx="22" ry="14" fill="white" opacity="0.22" transform="rotate(-8,158,320)"/>
+
+    <!-- ANC mic -->
+    <circle cx="148" cy="350" r="3" fill="#a8b8c4" stroke="#c0d0dc" stroke-width="1"/>
+  </g>
+
+  <text x="200" y="400" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#5a7a8a" letter-spacing="2">SILVER ALUMINUM</text>
+  <text x="200" y="416" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#7a90a0" letter-spacing="1">SIDE VIEW</text>
+</svg>

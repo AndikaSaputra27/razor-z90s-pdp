@@ -1677,3 +1677,48 @@ html[data-theme] {
 body {
   transition: background-color 0.5s ease;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   23. THUMBNAIL LABEL & 2-THUMB LAYOUT
+   ═══════════════════════════════════════════════════════════════ */
+.gallery-thumbs {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.thumb-label {
+  display: block;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  padding-bottom: 6px;
+  transition: color var(--transition-fast);
+}
+
+.thumb-item.active .thumb-label,
+.thumb-item:hover .thumb-label {
+  color: var(--color-accent);
+}
+
+.thumb-item {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+}
+
+.thumb-item img {
+  flex: 1;
+  padding: var(--space-2);
+  object-fit: contain;
+}
+
+/* Smooth main image swap */
+.gallery-main-img {
+  transition: transform 0.1s ease, opacity 0.25s ease;
+}
+
+.gallery-main-img.is-swapping {
+  opacity: 0;
+}

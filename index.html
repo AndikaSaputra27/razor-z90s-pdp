@@ -86,7 +86,7 @@
 
         <div class="gallery-main-wrap" id="galleryMainWrap">
           <div class="zoom-container" id="zoomContainer" role="img" aria-label="Foto produk Razor Z90s">
-            <img src="img/razor-z90s.jpeg" alt="Razor Z90s Over-Ear Wireless ANC Headphones"
+            <img src="img/matte-black-front.svg" alt="Razor Z90s Over-Ear Wireless ANC Headphones"
               class="gallery-main-img" id="mainProductImg" draggable="false" />
           </div>
           <!-- Zoom Controls -->
@@ -104,19 +104,15 @@
           <span class="zoom-hint" aria-hidden="true">Scroll atau pinch untuk zoom</span>
         </div>
 
-        <!-- Thumbnails -->
+        <!-- Thumbnails — data-view="front|side" used by JS to build src per variant -->
         <div class="gallery-thumbs" role="list" aria-label="Thumbnail galeri">
-          <button class="thumb-item active" data-img="img/razor-z90s.jpeg" role="listitem" aria-label="Tampilan depan" aria-pressed="true">
-            <img src="img/razor-z90s.jpeg" alt="Razor Z90s tampilan depan" />
+          <button class="thumb-item active" data-view="front" role="listitem" aria-label="Tampilan depan" aria-pressed="true">
+            <img src="img/matte-black-front.svg" alt="Razor Z90s tampilan depan" id="thumb0" />
+            <span class="thumb-label">Depan</span>
           </button>
-          <button class="thumb-item" data-img="img/razor-z90s.jpeg" role="listitem" aria-label="Tampilan samping" aria-pressed="false">
-            <img src="img/razor-z90s.jpeg" alt="Razor Z90s tampilan samping" />
-          </button>
-          <button class="thumb-item" data-img="img/razor-z90s.jpeg" role="listitem" aria-label="Detail earcup" aria-pressed="false">
-            <img src="img/razor-z90s.jpeg" alt="Razor Z90s detail earcup" />
-          </button>
-          <button class="thumb-item" data-img="img/razor-z90s.jpeg" role="listitem" aria-label="Tampilan belakang" aria-pressed="false">
-            <img src="img/razor-z90s.jpeg" alt="Razor Z90s tampilan belakang" />
+          <button class="thumb-item" data-view="side" role="listitem" aria-label="Tampilan samping" aria-pressed="false">
+            <img src="img/matte-black-side.svg" alt="Razor Z90s tampilan samping" id="thumb1" />
+            <span class="thumb-label">Samping</span>
           </button>
         </div>
 
