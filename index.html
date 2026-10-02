@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html>
+<html lang="id" data-theme="matte-black">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Razor Z90s &mdash; Wireless ANC Headphones | Razor Audio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       HEADER NAVIGATION
+  ═══════════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+
+      <button class="btn-icon btn-hamburger" id="btnHamburger"
+        aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navDrawer">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <a href="#" class="site-logo" aria-label="Razor Audio &mdash; halaman utama">
+        <span class="logo-razor">RAZOR</span>
+        <span class="logo-audio">AUDIO</span>
+      </a>
+
+      <div class="header-actions" role="toolbar" aria-label="Aksi header">
+        <button class="btn-icon" id="btnSearch" aria-label="Cari produk">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="btn-icon" id="btnProfile" aria-label="Akun saya">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+        <button class="btn-icon btn-cart" id="btnCartHeader" aria-label="Keranjang belanja" aria-haspopup="dialog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-badge" id="cartBadge" aria-live="polite" aria-label="Jumlah item keranjang">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAV DRAWER -->
+  <nav class="nav-drawer" id="navDrawer" role="navigation" aria-label="Menu utama" aria-hidden="true">
+    <div class="nav-drawer-header">
+      <span class="nav-drawer-title">Menu</span>
+      <button class="btn-icon btn-close-nav" id="btnCloseNav" aria-label="Tutup menu navigasi">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <ul class="nav-drawer-list" role="list">
+      <li><a href="#" class="nav-drawer-link">Beranda</a></li>
+      <li><a href="#" class="nav-drawer-link">Headphones</a></li>
+      <li><a href="#" class="nav-drawer-link">Earbuds</a></li>
+      <li><a href="#" class="nav-drawer-link">Speakers</a></li>
+      <li><a href="#" class="nav-drawer-link">Accessories</a></li>
+      <li><a href="#" class="nav-drawer-link">About Razor Audio</a></li>
+      <li><a href="#" class="nav-drawer-link">Hubungi Kami</a></li>
+    </ul>
+  </nav>
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <ol class="breadcrumb-list" role="list">
+      <li><a href="#">Beranda</a></li>
+      <li aria-hidden="true">/</li>
+      <li><a href="#">Headphones</a></li>
+      <li aria-hidden="true">/</li>
+      <li aria-current="page">Razor Z90s</li>
+    </ol>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════
+       MAIN — PRODUCT DETAIL PAGE
+  ═══════════════════════════════════════════════ -->
+  <main class="pdp-main" id="mainContent">
+    <div class="pdp-container">
+
+      <!-- ─── LEFT: Gallery ─── -->
+      <section class="pdp-gallery" aria-label="Galeri produk Razor Z90s">
+
+        <div class="gallery-main-wrap" id="galleryMainWrap">
+          <div class="zoom-container" id="zoomContainer" role="img" aria-label="Foto produk Razor Z90s">
+            <img src="img/razor-z90s.jpeg" alt="Razor Z90s Over-Ear Wireless ANC Headphones"
+              class="gallery-main-img" id="mainProductImg" draggable="false" />
+          </div>
+          <!-- Zoom Controls -->
+          <div class="zoom-controls" role="group" aria-label="Kontrol zoom gambar">
+            <button class="zoom-btn" id="btnZoomIn" aria-label="Perbesar gambar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </button>
+            <button class="zoom-btn" id="btnZoomOut" aria-label="Perkecil gambar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </button>
+            <button class="zoom-btn" id="btnZoomReset" aria-label="Reset zoom gambar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            </button>
+          </div>
+          <span class="zoom-hint" aria-hidden="true">Scroll atau pinch untuk zoom</span>
+        </div>
+
+        <!-- Thumbnails -->
+        <div class="gallery-thumbs" role="list" aria-label="Thumbnail galeri">
+          <button class="thumb-item active" data-img="img/razor-z90s.jpeg" role="listitem" aria-label="Tampilan depan" aria-pressed="true">
+            <img src="img/razor-z90s.jpeg" alt="Razor Z90s tampilan depan" />
+          </button>
+          <button class="thumb-item" data-img="img/razor-z90s.jpeg" role="listitem" aria-label="Tampilan samping" aria-pressed="false">
+            <img src="img/razor-z90s.jpeg" alt="Razor Z90s tampilan samping" />
+          </button>
+          <button class="thumb-item" data-img="img/razor-z90s.jpeg" role="listitem" aria-label="Detail earcup" aria-pressed="false">
+            <img src="img/razor-z90s.jpeg" alt="Razor Z90s detail earcup" />
+          </button>
+          <button class="thumb-item" data-img="img/razor-z90s.jpeg" role="listitem" aria-label="Tampilan belakang" aria-pressed="false">
+            <img src="img/razor-z90s.jpeg" alt="Razor Z90s tampilan belakang" />
+          </button>
+        </div>
+
+      </section>
+
+      <!-- ─── RIGHT: Product Info ─── -->
+      <section class="pdp-info" aria-label="Informasi produk Razor Z90s">
+
+        <p class="product-brand">Razor Audio</p>
+        <h1 class="product-name">Razor Z90s</h1>
+        <p class="product-tagline">Over-Ear Wireless ANC Headphones with Spatial Sound</p>
+
+        <!-- Star Rating -->
+        <div class="rating-wrap" aria-label="Rating produk">
+          <div class="star-rating" id="starRating" role="group" aria-label="Beri penilaian bintang 1 hingga 5">
+            <button class="star-btn" data-value="1" aria-label="1 bintang" aria-pressed="false">&#9733;</button>
+            <button class="star-btn" data-value="2" aria-label="2 bintang" aria-pressed="false">&#9733;</button>
+            <button class="star-btn" data-value="3" aria-label="3 bintang" aria-pressed="false">&#9733;</button>
+            <button class="star-btn" data-value="4" aria-label="4 bintang" aria-pressed="false">&#9733;</button>
+            <button class="star-btn" data-value="5" aria-label="5 bintang" aria-pressed="false">&#9733;</button>
+          </div>
+          <span class="rating-text" id="ratingText" aria-live="polite">Belum ada penilaian</span>
+        </div>
+
+        <!-- Price -->
+        <div class="price-wrap" aria-live="polite" aria-label="Harga produk">
+          <span class="price-label">Starting at</span>
+          <span class="price-value" id="priceDisplay">$129.99</span>
+        </div>
+
+        <hr class="info-divider" aria-hidden="true" />
+
+        <!-- Variant Selector -->
+        <fieldset class="variant-group" aria-label="Pilih varian warna">
+          <legend class="variant-label">Pilih Varian: <span class="variant-selected-name" id="variantSelectedName">Matte Black</span></legend>
+          <div class="variant-options" role="radiogroup" aria-label="Varian warna">
+
+            <label class="variant-option active" aria-label="Matte Black - $129.99">
+              <input type="radio" name="productVariant" value="matte-black" checked aria-label="Matte Black $129.99" />
+              <span class="variant-swatch swatch-black" aria-hidden="true"></span>
+              <span class="variant-option-name">Matte Black</span>
+              <span class="variant-option-price">$129.99</span>
+            </label>
+
+            <label class="variant-option" aria-label="Silver Aluminum - $159.99">
+              <input type="radio" name="productVariant" value="silver-aluminum" aria-label="Silver Aluminum $159.99" />
+              <span class="variant-swatch swatch-silver" aria-hidden="true"></span>
+              <span class="variant-option-name">Silver Aluminum</span>
+              <span class="variant-option-price">$159.99</span>
+            </label>
+
+            <label class="variant-option" aria-label="Matte Blue - $149.99">
+              <input type="radio" name="productVariant" value="matte-blue" aria-label="Matte Blue $149.99" />
+              <span class="variant-swatch swatch-blue" aria-hidden="true"></span>
+              <span class="variant-option-name">Matte Blue</span>
+              <span class="variant-option-price">$149.99</span>
+            </label>
+
+          </div>
+        </fieldset>
+
+        <!-- Quantity -->
+        <div class="qty-wrap" role="group" aria-label="Jumlah unit">
+          <span class="qty-label">Jumlah:</span>
+          <div class="qty-control">
+            <button class="qty-btn" id="btnQtyMinus" aria-label="Kurangi jumlah" disabled>&minus;</button>
+            <span class="qty-value" id="qtyValue" aria-live="polite" aria-label="Jumlah saat ini">1</span>
+            <button class="qty-btn" id="btnQtyPlus" aria-label="Tambah jumlah">+</button>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-wrap" role="group" aria-label="Aksi produk">
+          <button class="btn-add-cart" id="btnAddToCart" aria-label="Tambahkan Razor Z90s ke keranjang belanja">
+            Add to Cart
+          </button>
+          <button class="btn-wishlist" id="btnWishlist" aria-label="Simpan ke daftar keinginan" aria-pressed="false">
+            <svg class="icon-heart" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Toast -->
+        <div class="toast-notification" id="toastNotif" role="status" aria-live="polite" aria-atomic="true"></div>
+
+        <hr class="info-divider" aria-hidden="true" />
+
+        <!-- ─── ACCORDION ─── -->
+        <div class="accordion-wrap" id="accordionWrap">
+
+          <!-- Description -->
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-desc-panel" id="acc-desc-btn">
+              <span class="accordion-title">Description</span>
+              <svg class="accordion-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-panel" id="acc-desc-panel" role="region" aria-labelledby="acc-desc-btn" hidden>
+              <div class="accordion-content">
+                <p>Razor Z90s hadir dengan desain ergonomis yang mengutamakan kenyamanan pemakaian jangka panjang. Earcup berbantal <strong>memory foam</strong> melapisi telinga secara menyeluruh, meminimalkan kebocoran suara dan memberikan isolasi pasif yang efektif bahkan sebelum fitur ANC diaktifkan.</p>
+                <p>Driver <strong>40mm Neodymium</strong> yang dikalibrasi secara presisi menghasilkan respons frekuensi luas dari 20Hz hingga 20kHz, menyajikan subbas yang dalam, midrange yang hangat, dan treble yang jernih tanpa distorsi pada volume tinggi.</p>
+                <p>Headband yang dapat disesuaikan panjangnya dilengkapi pelapis kulit sintetik premium sehingga nyaman dipakai dalam sesi kerja panjang, perjalanan, maupun sesi mendengarkan musik santai.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Specs -->
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-specs-panel" id="acc-specs-btn">
+              <span class="accordion-title">Technical Specs</span>
+              <svg class="accordion-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-panel" id="acc-specs-panel" role="region" aria-labelledby="acc-specs-btn" hidden>
+              <div class="accordion-content">
+                <table class="specs-table" aria-label="Tabel spesifikasi teknis Razor Z90s">
+                  <thead><tr><th scope="col">Spesifikasi</th><th scope="col">Detail</th></tr></thead>
+                  <tbody>
+                    <tr><td>Driver Size</td><td>40mm Neodymium</td></tr>
+                    <tr><td>Frequency Response</td><td>20Hz &ndash; 20kHz</td></tr>
+                    <tr><td>Bluetooth Version</td><td>v5.3</td></tr>
+                    <tr><td>Battery Life</td><td>Up to 50 Hours</td></tr>
+                    <tr><td>Noise Cancellation</td><td>Hybrid ANC</td></tr>
+                    <tr><td>Weight</td><td>250g</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Features -->
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-features-panel" id="acc-features-btn">
+              <span class="accordion-title">Features</span>
+              <svg class="accordion-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-panel" id="acc-features-panel" role="region" aria-labelledby="acc-features-btn" hidden>
+              <div class="accordion-content">
+                <ul class="features-list" role="list">
+                  <li>
+                    <div class="feature-icon-wrap" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <div><strong>Fast Charging</strong><p>15 menit pengisian menghasilkan 3 jam pemutaran. Pengisian penuh memerlukan sekitar 2 jam melalui USB-C.</p></div>
+                  </li>
+                  <li>
+                    <div class="feature-icon-wrap" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    </div>
+                    <div><strong>Multipoint Connection</strong><p>Terhubung ke dua perangkat secara bersamaan &mdash; beralih antara laptop dan smartphone tanpa re-pairing.</p></div>
+                  </li>
+                  <li>
+                    <div class="feature-icon-wrap" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                    </div>
+                    <div><strong>Spatial Audio</strong><p>Teknologi pemrosesan audio tiga dimensi yang menciptakan soundstage luas dan imersif, ideal untuk film, gaming, dan musik.</p></div>
+                  </li>
+                  <li>
+                    <div class="feature-icon-wrap" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                    </div>
+                    <div><strong>Hybrid ANC</strong><p>Sistem peredam bising aktif hibrida dengan mikrofon internal dan eksternal, efektif meredam kebisingan hingga 35dB.</p></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /accordion-wrap -->
+
+      </section><!-- /pdp-info -->
+    </div><!-- /pdp-container -->
+  </main>
+
+  <!-- ═══════════════════════════════════════════════
+       CART DRAWER
+  ═══════════════════════════════════════════════ -->
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Keranjang belanja" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <h2 class="cart-drawer-title">Keranjang Belanja</h2>
+      <button class="btn-icon btn-close-cart" id="btnCloseCart" aria-label="Tutup keranjang belanja">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="cart-drawer-body" id="cartDrawerBody">
+      <div class="cart-empty-state" id="cartEmptyState">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <p>Keranjang kamu masih kosong.</p>
+      </div>
+      <ul class="cart-items-list" id="cartItemsList" role="list" aria-label="Daftar item keranjang"></ul>
+    </div>
+    <div class="cart-drawer-footer" id="cartDrawerFooter">
+      <div class="cart-subtotal-row">
+        <span class="cart-subtotal-label">Subtotal</span>
+        <span class="cart-subtotal-value" id="cartSubtotal" aria-live="polite">$0.00</span>
+      </div>
+      <p class="cart-tax-note">Pajak dan ongkos kirim dihitung saat checkout.</p>
+      <button class="btn-checkout" id="btnCheckout" aria-label="Lanjutkan ke proses checkout">
+        Checkout
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-razor">RAZOR</span><span class="logo-audio">AUDIO</span>
+        <p class="footer-tagline">Premium Sound. Engineered for Life.</p>
+      </div>
+      <div class="footer-links" role="navigation" aria-label="Tautan footer">
+        <div class="footer-col">
+          <h3 class="footer-col-title">Produk</h3>
+          <ul role="list"><li><a href="#">Headphones</a></li><li><a href="#">Earbuds</a></li><li><a href="#">Speakers</a></li><li><a href="#">Accessories</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Dukungan</h3>
+          <ul role="list"><li><a href="#">Pusat Bantuan</a></li><li><a href="#">Garansi</a></li><li><a href="#">Kebijakan Pengembalian</a></li><li><a href="#">Hubungi Kami</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Perusahaan</h3>
+          <ul role="list"><li><a href="#">Tentang Kami</a></li><li><a href="#">Blog</a></li><li><a href="#">Karier</a></li><li><a href="#">Pers &amp; Media</a></li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Razor Audio. Seluruh hak cipta dilindungi undang-undang.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
