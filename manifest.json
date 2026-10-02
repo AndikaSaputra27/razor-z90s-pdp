@@ -1,0 +1,73 @@
+{
+  "name": "Razor Audio — Premium Headphones",
+  "short_name": "Razor Audio",
+  "description": "Toko headphone premium Razor Audio. Temukan Z90s Wireless ANC dan koleksi lengkap lainnya.",
+  "start_url": "/razor-z90s-pdp/index.html",
+  "scope": "/razor-z90s-pdp/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0d0d0d",
+  "theme_color": "#904745",
+  "lang": "id",
+  "categories": ["shopping", "lifestyle"],
+  "icons": [
+    {
+      "src": "img/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "img/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "img/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Semua Produk",
+      "short_name": "Produk",
+      "description": "Lihat semua koleksi Razor Audio",
+      "url": "/razor-z90s-pdp/products.html",
+      "icons": [{ "src": "img/icon-96.png", "sizes": "96x96", "type": "image/png" }]
+    },
+    {
+      "name": "Checkout",
+      "short_name": "Checkout",
+      "description": "Lanjutkan ke proses checkout",
+      "url": "/razor-z90s-pdp/checkout.html",
+      "icons": [{ "src": "img/icon-96.png", "sizes": "96x96", "type": "image/png" }]
+    }
+  ]
+}

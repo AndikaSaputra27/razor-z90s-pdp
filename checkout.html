@@ -1,8 +1,22 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id" data-theme="default">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- PWA Meta Tags -->
+  <meta name="theme-color" content="#904745" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Razor Audio" />
+  <meta name="application-name" content="Razor Audio" />
+  <meta name="msapplication-TileColor" content="#904745" />
+  <meta name="msapplication-TileImage" content="img/icon-192.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="img/icon-192.svg" />
+  <link rel="apple-touch-icon" href="img/icon-192.png" />
+  <link rel="apple-touch-icon" sizes="192x192" href="img/icon-192.png" />
+  <link rel="apple-touch-icon" sizes="512x512" href="img/icon-512.png" />
   <title>Checkout &mdash; Razor Audio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="checkout.css" />
@@ -382,5 +396,16 @@
 
   <script src="shared.js"></script>
   <script src="checkout.js"></script>
+
+  <!-- Register Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(function(reg) { console.log('[PWA] SW registered:', reg.scope); })
+          .catch(function(err) { console.warn('[PWA] SW failed:', err); });
+      });
+    }
+  </script>
 </body>
 </html>

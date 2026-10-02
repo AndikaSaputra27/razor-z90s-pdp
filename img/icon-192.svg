@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#2a2a2a"/>
+      <stop offset="100%" stop-color="#0d0d0d"/>
+    </radialGradient>
+    <radialGradient id="cup" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#3a3a3a"/>
+      <stop offset="100%" stop-color="#111"/>
+    </radialGradient>
+  </defs>
+  <!-- Background circle -->
+  <rect width="192" height="192" rx="40" fill="url(#bg)"/>
+  <!-- Headband arc -->
+  <path d="M 52 110 Q 50 44 96 36 Q 142 44 140 110"
+        fill="none" stroke="#3a3a3a" stroke-width="11" stroke-linecap="round"/>
+  <!-- Slider left -->
+  <rect x="45" y="103" width="10" height="20" rx="3" fill="#2a2a2a" stroke="#444" stroke-width="0.5"/>
+  <!-- Slider right -->
+  <rect x="137" y="103" width="10" height="20" rx="3" fill="#2a2a2a" stroke="#444" stroke-width="0.5"/>
+  <!-- Left earcup -->
+  <ellipse cx="55" cy="133" rx="28" ry="33" fill="url(#cup)"/>
+  <ellipse cx="55" cy="133" rx="28" ry="33" fill="none" stroke="#333" stroke-width="1"/>
+  <ellipse cx="55" cy="133" rx="20" ry="24" fill="#1a1a1a"/>
+  <ellipse cx="55" cy="133" rx="11" ry="13" fill="#0d0d0d"/>
+  <!-- Left accent dot -->
+  <circle cx="68" cy="120" r="3" fill="#904745"/>
+  <!-- Right earcup -->
+  <ellipse cx="137" cy="133" rx="28" ry="33" fill="url(#cup)"/>
+  <ellipse cx="137" cy="133" rx="28" ry="33" fill="none" stroke="#333" stroke-width="1"/>
+  <ellipse cx="137" cy="133" rx="20" ry="24" fill="#1a1a1a"/>
+  <ellipse cx="137" cy="133" rx="11" ry="13" fill="#0d0d0d"/>
+  <!-- Right accent dot -->
+  <circle cx="150" cy="120" r="3" fill="#904745"/>
+  <!-- Brand text -->
+  <text x="96" y="180" text-anchor="middle" font-family="Inter,Arial,sans-serif"
+        font-size="10" font-weight="700" fill="#904745" letter-spacing="3">RAZOR</text>
+</svg>
