@@ -1,0 +1,271 @@
+{
+  "info": {
+    "name": "Razor Audio REST API",
+    "_postman_id": "razor-audio-api-v1",
+    "description": "Koleksi endpoint REST API Razor Audio untuk exercise Full Stack Web Development Bootcamp.\n\n## Base URL\n`http://localhost:3000`\n\n## Endpoints\n- GET /api/products\n- GET /api/products/:id\n- GET /api/products/:id/variants\n- POST /api/products\n- PUT /api/products/:id\n- PATCH /api/products/:id\n- DELETE /api/products/:id",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:3000", "type": "string" },
+    { "key": "product_id", "value": "1", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "item": [
+        {
+          "name": "GET / — API Status",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/", "host": ["{{base_url}}"], "path": [""] },
+            "description": "Cek apakah API berjalan dengan baik."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "GET /api/products — Semua Produk",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/products",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products"]
+            },
+            "description": "Ambil semua produk (default: page 1, limit 10)."
+          },
+          "response": []
+        },
+        {
+          "name": "GET /api/products — Search",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/products?search=Z90s",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products"],
+              "query": [{ "key": "search", "value": "Z90s" }]
+            },
+            "description": "Cari produk berdasarkan nama atau deskripsi."
+          },
+          "response": []
+        },
+        {
+          "name": "GET /api/products — Filter by Category",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/products?category=wireless",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products"],
+              "query": [{ "key": "category", "value": "wireless" }]
+            },
+            "description": "Filter produk berdasarkan kategori: wireless, wired, anc."
+          },
+          "response": []
+        },
+        {
+          "name": "GET /api/products — Filter by Price Range",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/products?minPrice=50&maxPrice=150",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products"],
+              "query": [
+                { "key": "minPrice", "value": "50" },
+                { "key": "maxPrice", "value": "150" }
+              ]
+            },
+            "description": "Filter produk berdasarkan range harga."
+          },
+          "response": []
+        },
+        {
+          "name": "GET /api/products — Sort by Price",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/products?sort=price&order=asc",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products"],
+              "query": [
+                { "key": "sort", "value": "price" },
+                { "key": "order", "value": "asc" }
+              ]
+            },
+            "description": "Urutkan produk berdasarkan harga (asc/desc)."
+          },
+          "response": []
+        },
+        {
+          "name": "GET /api/products — Pagination",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/products?page=1&limit=2",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "2" }
+              ]
+            },
+            "description": "Pagination — ambil 2 produk per halaman."
+          },
+          "response": []
+        },
+        {
+          "name": "GET /api/products/:id — Detail Produk",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/products/{{product_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "{{product_id}}"]
+            },
+            "description": "Ambil detail lengkap satu produk berdasarkan ID."
+          },
+          "response": []
+        },
+        {
+          "name": "GET /api/products/:id/variants — Varian Produk",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/products/{{product_id}}/variants",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "{{product_id}}", "variants"]
+            },
+            "description": "Ambil daftar varian warna/ukuran dan stok produk."
+          },
+          "response": []
+        },
+        {
+          "name": "POST /api/products — Tambah Produk Baru",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{base_url}}/api/products",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Razor Elite\",\n  \"brand\": \"Razor Audio\",\n  \"tagline\": \"Premium Flagship Headphones\",\n  \"price\": 299.99,\n  \"image\": \"https://andikasaputra27.github.io/razor-z90s-pdp/img/silver-aluminum-front.svg\",\n  \"description\": \"Headphone flagship Razor Audio dengan teknologi terdepan.\",\n  \"category\": \"wireless\",\n  \"variants\": {\n    \"colorOrSize\": [\n      { \"id\": \"platinum\", \"label\": \"Platinum Silver\", \"price\": 299.99, \"image\": \"\" }\n    ],\n    \"quantity\": 15\n  },\n  \"specs\": {\n    \"driverSize\": \"50mm Beryllium\",\n    \"frequencyResponse\": \"5Hz - 40kHz\",\n    \"bluetoothVersion\": \"v5.4\",\n    \"batteryLife\": \"Up to 60 Hours\",\n    \"noiseCancellation\": \"Hybrid ANC Pro+\",\n    \"weight\": \"265g\"\n  },\n  \"features\": [\n    \"Beryllium driver\",\n    \"LDAC + aptX Lossless\",\n    \"Spatial Audio 3D\"\n  ],\n  \"inStock\": true\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "description": "Tambah produk baru ke dalam daftar. Field wajib: name, price, image, description."
+          },
+          "response": []
+        },
+        {
+          "name": "PUT /api/products/:id — Update Produk (Full)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{base_url}}/api/products/{{product_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "{{product_id}}"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Razor Z90s (Updated)\",\n  \"brand\": \"Razor Audio\",\n  \"tagline\": \"Over-Ear Wireless ANC Headphones with Spatial Sound\",\n  \"price\": 139.99,\n  \"image\": \"https://andikasaputra27.github.io/razor-z90s-pdp/img/matte-black-front.svg\",\n  \"description\": \"Versi terbaru Razor Z90s dengan peningkatan baterai hingga 55 jam.\",\n  \"category\": \"wireless\",\n  \"inStock\": true\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "description": "Update seluruh data produk. Semua field wajib diisi."
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH /api/products/:id — Update Produk (Partial)",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{base_url}}/api/products/{{product_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "{{product_id}}"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"price\": 119.99,\n  \"inStock\": true\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "description": "Update sebagian data produk. Hanya field yang dikirim yang akan diupdate."
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE /api/products/:id — Hapus Produk",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/api/products/{{product_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "{{product_id}}"]
+            },
+            "description": "Hapus produk berdasarkan ID. Produk yang dihapus tidak dapat dikembalikan."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Error Cases",
+      "item": [
+        {
+          "name": "GET /api/products/999 — Product Not Found",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/products/999",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "999"]
+            },
+            "description": "Test response 404 saat produk tidak ditemukan."
+          },
+          "response": []
+        },
+        {
+          "name": "POST /api/products — Missing Required Fields",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{base_url}}/api/products",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Test Product\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "description": "Test response 400 saat field wajib tidak dikirim."
+          },
+          "response": []
+        },
+        {
+          "name": "GET /api/unknown — Endpoint Not Found",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/unknown",
+              "host": ["{{base_url}}"],
+              "path": ["api", "unknown"]
+            },
+            "description": "Test response 404 saat endpoint tidak ditemukan."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
