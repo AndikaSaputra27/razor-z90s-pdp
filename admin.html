@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="default">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel &mdash; Razor Audio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header admin-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo" aria-label="Razor Audio">
+        <span class="logo-razor">RAZOR</span>
+        <span class="logo-audio">AUDIO</span>
+      </a>
+      <span class="admin-badge">Admin Panel</span>
+      <div class="header-actions">
+        <button class="btn-icon btn-darkmode" id="btnDarkMode" aria-label="Toggle dark mode">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="products.html" class="btn-icon" aria-label="Lihat toko">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN LAYOUT -->
+  <div class="admin-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <nav class="admin-nav">
+        <button class="admin-nav-item active" data-section="dashboard">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </button>
+        <button class="admin-nav-item" data-section="products">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          Produk
+        </button>
+        <button class="admin-nav-item" data-section="add-product">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          Tambah Produk
+        </button>
+        <button class="admin-nav-item" data-section="api-status">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          API Status
+        </button>
+      </nav>
+      <div class="admin-api-indicator" id="apiIndicator">
+        <span class="api-dot" id="apiDot"></span>
+        <span id="apiStatusText">Mengecek API...</span>
+      </div>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="admin-content">
+
+      <!-- DASHBOARD -->
+      <section class="admin-section active" id="section-dashboard">
+        <div class="admin-section-header">
+          <h1 class="admin-section-title">Dashboard</h1>
+          <button class="btn-refresh" id="btnRefreshDash">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            Refresh
+          </button>
+        </div>
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-card">
+            <div class="stat-icon stat-blue">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-label">Total Produk</span>
+              <span class="stat-value" id="statTotal">—</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon stat-green">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-label">In Stock</span>
+              <span class="stat-value" id="statInStock">—</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon stat-orange">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-label">Harga Rata-rata</span>
+              <span class="stat-value" id="statAvgPrice">—</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon stat-accent">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-label">Rating Tertinggi</span>
+              <span class="stat-value" id="statTopRating">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="admin-card mt-6">
+          <h2 class="admin-card-title">Produk Terbaru</h2>
+          <div id="recentProducts">
+            <div class="admin-loading">Memuat data...</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCTS LIST -->
+      <section class="admin-section" id="section-products">
+        <div class="admin-section-header">
+          <h1 class="admin-section-title">Daftar Produk</h1>
+          <div class="admin-section-actions">
+            <input type="search" class="admin-search" id="adminSearch" placeholder="Cari produk..." />
+            <button class="btn-admin-primary" id="btnGoAddProduct">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Tambah Produk
+            </button>
+          </div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-table-wrap">
+            <table class="admin-table" id="productsTable">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Gambar</th>
+                  <th>Nama</th>
+                  <th>Kategori</th>
+                  <th>Harga</th>
+                  <th>Stok</th>
+                  <th>Rating</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="productsTableBody">
+                <tr><td colspan="8" class="admin-loading">Memuat produk...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ADD / EDIT PRODUCT -->
+      <section class="admin-section" id="section-add-product">
+        <div class="admin-section-header">
+          <h1 class="admin-section-title" id="formSectionTitle">Tambah Produk</h1>
+        </div>
+        <div class="admin-card">
+          <form class="admin-form" id="productForm" novalidate>
+            <input type="hidden" id="editProductId" value="" />
+            <div class="admin-form-grid">
+              <div class="form-group">
+                <label for="fName">Nama Produk <span class="required">*</span></label>
+                <input type="text" id="fName" placeholder="Razor Z90s" required />
+                <span class="field-error" id="errFName"></span>
+              </div>
+              <div class="form-group">
+                <label for="fBrand">Brand</label>
+                <input type="text" id="fBrand" placeholder="Razor Audio" value="Razor Audio" />
+              </div>
+              <div class="form-group">
+                <label for="fPrice">Harga (USD) <span class="required">*</span></label>
+                <input type="number" id="fPrice" placeholder="129.99" min="0" step="0.01" required />
+                <span class="field-error" id="errFPrice"></span>
+              </div>
+              <div class="form-group">
+                <label for="fCategory">Kategori</label>
+                <select id="fCategory">
+                  <option value="wireless">Wireless</option>
+                  <option value="wired">Wired</option>
+                </select>
+              </div>
+              <div class="form-group form-group--full">
+                <label for="fImage">URL Gambar <span class="required">*</span></label>
+                <input type="url" id="fImage" placeholder="https://..." required />
+                <span class="field-error" id="errFImage"></span>
+              </div>
+              <div class="form-group form-group--full">
+                <label for="fTagline">Tagline</label>
+                <input type="text" id="fTagline" placeholder="Over-Ear Wireless ANC..." />
+              </div>
+              <div class="form-group form-group--full">
+                <label for="fDesc">Deskripsi <span class="required">*</span></label>
+                <textarea id="fDesc" rows="4" placeholder="Deskripsi produk..." required></textarea>
+                <span class="field-error" id="errFDesc"></span>
+              </div>
+              <div class="form-group">
+                <label for="fQuantity">Stok Quantity</label>
+                <input type="number" id="fQuantity" placeholder="50" min="0" value="0" />
+              </div>
+              <div class="form-group">
+                <label class="label-checkbox">
+                  <input type="checkbox" id="fInStock" checked />
+                  <span>In Stock</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Specs -->
+            <div class="admin-form-section">
+              <h3 class="admin-form-section-title">Spesifikasi Teknis</h3>
+              <div class="admin-form-grid">
+                <div class="form-group">
+                  <label for="fDriver">Driver Size</label>
+                  <input type="text" id="fDriver" placeholder="40mm Neodymium" />
+                </div>
+                <div class="form-group">
+                  <label for="fFreq">Frequency Response</label>
+                  <input type="text" id="fFreq" placeholder="20Hz - 20kHz" />
+                </div>
+                <div class="form-group">
+                  <label for="fBluetooth">Bluetooth Version</label>
+                  <input type="text" id="fBluetooth" placeholder="v5.3" />
+                </div>
+                <div class="form-group">
+                  <label for="fBattery">Battery Life</label>
+                  <input type="text" id="fBattery" placeholder="Up to 50 Hours" />
+                </div>
+                <div class="form-group">
+                  <label for="fANC">Noise Cancellation</label>
+                  <input type="text" id="fANC" placeholder="Hybrid ANC" />
+                </div>
+                <div class="form-group">
+                  <label for="fWeight">Weight</label>
+                  <input type="text" id="fWeight" placeholder="250g" />
+                </div>
+              </div>
+            </div>
+
+            <div class="admin-form-actions">
+              <button type="submit" class="btn-admin-primary btn-lg" id="btnSubmitForm">
+                Simpan Produk
+              </button>
+              <button type="button" class="btn-admin-secondary btn-lg" id="btnCancelForm">
+                Batal
+              </button>
+            </div>
+            <div class="form-result" id="formResult"></div>
+          </form>
+        </div>
+      </section>
+
+      <!-- API STATUS -->
+      <section class="admin-section" id="section-api-status">
+        <div class="admin-section-header">
+          <h1 class="admin-section-title">API Status</h1>
+          <button class="btn-refresh" id="btnCheckAPI">Cek Ulang</button>
+        </div>
+        <div class="admin-card">
+          <div id="apiStatusDetail">
+            <div class="admin-loading">Mengecek API...</div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- DELETE CONFIRM MODAL -->
+  <div class="modal-overlay hidden" id="deleteModal" role="dialog" aria-modal="true">
+    <div class="modal">
+      <div class="modal-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+      </div>
+      <h2 class="modal-title">Hapus Produk?</h2>
+      <p class="modal-desc">Produk <strong id="deleteProductName"></strong> akan dihapus permanen. Tindakan ini tidak dapat dibatalkan.</p>
+      <div class="modal-actions">
+        <button class="btn-admin-danger" id="btnConfirmDelete">Ya, Hapus</button>
+        <button class="btn-admin-secondary" id="btnCancelDelete">Batal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="admin-toast" id="adminToast" role="status" aria-live="polite"></div>
+
+  <script src="shared.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

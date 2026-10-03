@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "name": "Razor Z90s",
+    "brand": "Razor Audio",
+    "tagline": "Over-Ear Wireless ANC Headphones with Spatial Sound",
+    "price": 129.99,
+    "image": "https://andikasaputra27.github.io/razor-z90s-pdp/img/matte-black-front.svg",
+    "variants": {
+      "colorOrSize": [
+        { "id": "matte-black",     "label": "Matte Black",     "price": 129.99, "image": "https://andikasaputra27.github.io/razor-z90s-pdp/img/matte-black-front.svg" },
+        { "id": "silver-aluminum", "label": "Silver Aluminum", "price": 159.99, "image": "https://andikasaputra27.github.io/razor-z90s-pdp/img/silver-aluminum-front.svg" },
+        { "id": "matte-blue",      "label": "Matte Blue",      "price": 149.99, "image": "https://andikasaputra27.github.io/razor-z90s-pdp/img/matte-blue-front.svg" }
+      ],
+      "quantity": 50
+    },
+    "description": "Razor Z90s hadir dengan desain ergonomis yang mengutamakan kenyamanan pemakaian jangka panjang. Earcup berbantal memory foam melapisi telinga secara menyeluruh, meminimalkan kebocoran suara.",
+    "specs": {
+      "driverSize": "40mm Neodymium",
+      "frequencyResponse": "20Hz - 20kHz",
+      "bluetoothVersion": "v5.3",
+      "batteryLife": "Up to 50 Hours",
+      "noiseCancellation": "Hybrid ANC",
+      "weight": "250g"
+    },
+    "features": [
+      "Fast Charging — 15 menit pengisian menghasilkan 3 jam pemutaran",
+      "Multipoint Connection — terhubung ke 2 perangkat sekaligus",
+      "Spatial Audio — soundstage 3D yang imersif",
+      "Hybrid ANC — reduksi kebisingan hingga 35dB"
+    ],
+    "category": "wireless",
+    "rating": 4.8,
+    "reviewCount": 128,
+    "inStock": true,
+    "createdAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "name": "Razor X50",
+    "brand": "Razor Audio",
+    "tagline": "On-Ear Wireless for Everyday Mobility",
+    "price": 89.99,
+    "image": "https://andikasaputra27.github.io/razor-z90s-pdp/img/matte-blue-front.svg",
+    "variants": {
+      "colorOrSize": [
+        { "id": "matte-blue",  "label": "Matte Blue",  "price": 89.99, "image": "https://andikasaputra27.github.io/razor-z90s-pdp/img/matte-blue-front.svg" },
+        { "id": "matte-black", "label": "Matte Black", "price": 89.99, "image": "https://andikasaputra27.github.io/razor-z90s-pdp/img/matte-black-front.svg" }
+      ],
+      "quantity": 30
+    },
+    "description": "On-Ear Wireless ringan untuk mobilitas tinggi. Bluetooth 5.3 dengan 35 jam baterai.",
+    "specs": {
+      "driverSize": "32mm Dynamic",
+      "frequencyResponse": "20Hz - 20kHz",
+      "bluetoothVersion": "v5.3",
+      "batteryLife": "Up to 35 Hours",
+      "noiseCancellation": "Passive",
+      "weight": "180g"
+    },
+    "features": ["Lightweight 180g design", "Foldable for travel", "Multipoint Connection", "USB-C Fast Charging"],
+    "category": "wireless",
+    "rating": 4.5,
+    "reviewCount": 64,
+    "inStock": true,
+    "createdAt": "2026-02-01T00:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "name": "Razor Pro S",
+    "brand": "Razor Audio",
+    "tagline": "Studio-Grade Over-Ear Headphones",
+    "price": 219.99,
+    "image": "https://andikasaputra27.github.io/razor-z90s-pdp/img/silver-aluminum-front.svg",
+    "variants": {
+      "colorOrSize": [
+        { "id": "silver-aluminum", "label": "Silver Aluminum", "price": 219.99, "image": "https://andikasaputra27.github.io/razor-z90s-pdp/img/silver-aluminum-front.svg" }
+      ],
+      "quantity": 20
+    },
+    "description": "Studio-grade Over-Ear dengan driver 50mm Titanium. Respons frekuensi 10Hz-30kHz untuk monitoring profesional.",
+    "specs": {
+      "driverSize": "50mm Titanium",
+      "frequencyResponse": "10Hz - 30kHz",
+      "bluetoothVersion": "v5.3 + Wired",
+      "batteryLife": "Up to 40 Hours",
+      "noiseCancellation": "Hybrid ANC Pro",
+      "weight": "290g"
+    },
+    "features": ["Studio-grade 50mm Titanium driver", "Detachable cable (3.5mm + USB-C)", "Hi-Res Audio certified", "Professional mixing mode"],
+    "category": "wired",
+    "rating": 4.9,
+    "reviewCount": 42,
+    "inStock": true,
+    "createdAt": "2026-03-01T00:00:00.000Z"
+  },
+  {
+    "id": 4,
+    "name": "Razor Lite",
+    "brand": "Razor Audio",
+    "tagline": "Lightweight Wireless for Travelers",
+    "price": 59.99,
+    "image": "https://andikasaputra27.github.io/razor-z90s-pdp/img/matte-black-side.svg",
+    "variants": {
+      "colorOrSize": [
+        { "id": "matte-black",     "label": "Matte Black",     "price": 59.99, "image": "https://andikasaputra27.github.io/razor-z90s-pdp/img/matte-black-side.svg" },
+        { "id": "matte-blue",      "label": "Matte Blue",      "price": 59.99, "image": "https://andikasaputra27.github.io/razor-z90s-pdp/img/matte-blue-side.svg" },
+        { "id": "silver-aluminum", "label": "Silver Aluminum", "price": 59.99, "image": "https://andikasaputra27.github.io/razor-z90s-pdp/img/silver-aluminum-side.svg" }
+      ],
+      "quantity": 100
+    },
+    "description": "Wireless ringan 180g untuk pemakaian santai. Lipat praktis, cocok untuk traveler dan komuter harian.",
+    "specs": {
+      "driverSize": "30mm Dynamic",
+      "frequencyResponse": "20Hz - 20kHz",
+      "bluetoothVersion": "v5.2",
+      "batteryLife": "Up to 25 Hours",
+      "noiseCancellation": "Passive",
+      "weight": "180g"
+    },
+    "features": ["Ultra-lightweight 180g", "Foldable compact design", "Voice assistant support", "USB-C charging"],
+    "category": "wireless",
+    "rating": 4.2,
+    "reviewCount": 89,
+    "inStock": true,
+    "createdAt": "2026-04-01T00:00:00.000Z"
+  }
+]
